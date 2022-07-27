@@ -1,8 +1,9 @@
 import React from "react"
+import { useNavigate } from "react-router-dom";
 import Service from "../services/service";
 
 const Contact=()=>{
-
+const navigate=useNavigate()
     const [state, setState] = React.useState({
         fullName: "",
         email: "",
@@ -21,15 +22,15 @@ const Contact=()=>{
           })
           .then((res) => {
             console.log(res.data);
-            alert("Get Back to you soon!")
+            
           });
       };
     return(
         <div className="  overflow-hidden flex flex-col h-screen w-full bg-gradient-to-r from-sky-300 to-gray-300">
          <div className="flex mt-24 ">
             <div className="w-1/2 flex flex-col justify-center "> 
-                <h1 className=" mt-5 text-3xl ont-serif font-bold text-black-800 text-sky-800">Connect With Us!</h1>
-            <img src="https://c.tenor.com/z94kQ6GwgyEAAAAC/hello-cute.gif " alt="hello" className=" w-1/2  mx-auto my-auto mt-auto mb-auto rounded-full shadow-md"/>
+                <h1 className=" mt-5 text-4xl font-serif font-bold  text-sky-800">Connect With Us!</h1>
+            <img src="https://cdn.dribbble.com/users/1928646/screenshots/5781112/contact.gif" alt="call" className="cursor-pointer w-1/2  mx-auto my-auto mt-auto mb-auto rounded-full shadow-md"/>
             </div>
          <form 
              onSubmit={(e) => {
@@ -77,7 +78,9 @@ const Contact=()=>{
                 }} 
                 type="submit"
                 className=" bg-gradient-to-r from-red-700 to-red-400 hover:from-green-800 hover:to-lime-500  p-3 m-3 rounded-lg shadow-md"
-              >
+                onClick={() => {
+                  alert("Get Back to you soon!")
+                  navigate(`/`)}}>
                 Submit
               </button>
             </div>
