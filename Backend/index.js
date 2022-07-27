@@ -17,10 +17,12 @@ mongoose.connect(process.env.DB, {
   })
   app.use(express.json());
   require("./routers/ContactRouter")(app)
+  require("./routers/HomeRouter")(app)
+  require("./routers/AboutRouter")(app)
 const PORT = process.env.PORT || 8080;
-app.get("/", (req, res) => {
+/* app.get("/", (req, res) => {
     res.send("hello people");
-  });
+  }); */
   app.listen(PORT, (error) => {
     if(!error)
         console.log(`Server is Successfully Running and App is listening on port  ${PORT}`)

@@ -1,9 +1,12 @@
 const mongoose= require("mongoose")
 const aboutSchema = new mongoose.Schema({
-    skills:{
+    skill:{
      type:String
+    },
+    efficiency:{
+        type:Number
     }
 })
 
-const About = mongoose.model("About",imageSchema)
+const About = mongoose.model("About",aboutSchema)
 module.exports= About

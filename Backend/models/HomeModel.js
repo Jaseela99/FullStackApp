@@ -1,14 +1,21 @@
 const mongoose= require("mongoose")
-const imageSchema = new mongoose.Schema({
-    name:{
+const homeSchema = new mongoose.Schema({
+    userName:{
      type:String
     },
-    image:
+    title:{
+        type:String
+    },
+    bio:{
+        type:String
+    },
+   /*  image:
     {
         data: Buffer,
         contentType: String
-    }
+    } */
+    
 })
 
-const Image = mongoose.model("Image",imageSchema)
-module.exports= Image
+const Home = mongoose.model("Home",homeSchema)
+module.exports= Home
